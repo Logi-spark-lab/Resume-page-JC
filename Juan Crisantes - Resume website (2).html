@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juan Crisantes | Computer Science Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --gray: #7f8c8d;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Navigation - UPDATED */
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+        
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section - Original styling preserved */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #1a2530 100%);
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--secondary);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .hero h2 {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Section Styles - Original styling preserved */
+        section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 3px;
+            background-color: var(--secondary);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* About Me Section - Updated */
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-text {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .about-text h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+        
+        .mvvp-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: var(--secondary);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            margin-top: 1.5rem;
+        }
+        
+        .mvvp-link:hover {
+            background-color: #2980b9;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-icons {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .icon-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 80px;
+        }
+        
+        .icon-item i {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .icon-item p {
+            font-size: 0.9rem;
+            text-align: center;
+        }
+        
+        /* Education Section - Original styling preserved */
+        .education-item {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+        
+        .education-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .education-item h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .education-item .institution {
+            color: var(--secondary);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .education-item .details {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            color: var(--gray);
+        }
+        
+        .education-item .gpa {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        
+        .education-item ul {
+            padding-left: 1.5rem;
+        }
+        
+        .education-item li {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Work History - Original styling preserved */
+        .work-item {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .work-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        
+        .work-title {
+            font-size: 1.3rem;
+            color: var(--primary);
+        }
+        
+        .work-date {
+            background-color: var(--light);
+            color: var(--primary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .work-company {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .work-item ul {
+            padding-left: 1.5rem;
+        }
+        
+        /* Skills - Original styling preserved */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .skill-category {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .skill-category h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--light);
+        }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+        
+        .skill-tag {
+            background-color: var(--light);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+        
+        .skill-tag.highlight {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        .strengths-source {
+            text-align: center;
+            margin-top: 2rem;
+            color: var(--gray);
+            font-style: italic;
+        }
+        
+        .strengths-report-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: var(--light);
+            color: var(--primary);
+            padding: 0.6rem 1.2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            margin-top: 1rem;
+        }
+        
+        .strengths-report-link:hover {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        /* Resume Section - Updated */
+        .resume-container {
+            text-align: center;
+            padding: 3rem;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .resume-icon {
+            font-size: 4rem;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .resume-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            background-color: var(--secondary);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            margin-top: 1.5rem;
+        }
+        
+        .resume-download:hover {
+            background-color: #2980b9;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Testimonials Section - Updated */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .testimonial-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 1rem;
+            border: 3px solid var(--light);
+        }
+        
+        .testimonial-info h4 {
+            color: var(--primary);
+            margin-bottom: 0.3rem;
+        }
+        
+        .testimonial-info p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .testimonial-quote {
+            font-style: italic;
+            color: #555;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .testimonial-quote:before {
+            content: '"';
+            font-size: 3rem;
+            color: var(--secondary);
+            position: absolute;
+            left: -10px;
+            top: -15px;
+            opacity: 0.3;
+        }
+        
+        /* Contact Section - Original styling preserved */
+        .contact {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .contact .section-title h2 {
+            color: white;
+        }
+        
+        .contact .section-title h2::after {
+            background-color: var(--secondary);
+        }
+        
+        .contact-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .contact-info {
+            margin-bottom: 2rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-item i {
+            color: var(--secondary);
+            margin-right: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+        }
+        
+        .social-link:hover {
+            background-color: var(--secondary);
+            transform: translateY(-5px);
+        }
+        
+        /* Footer - Original styling preserved */
+        footer {
+            background-color: #1a2530;
+            color: #aaa;
+            text-align: center;
+            padding: 2rem 0;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design - Original styling preserved */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary);
+                flex-direction: column;
+                padding: 1rem 0;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            nav ul.active {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 0;
+                text-align: center;
+                padding: 0.8rem 0;
+            }
+            
+            .hero {
+                padding: 3rem 0;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.2rem;
+            }
+            
+            section {
+                padding: 3rem 0;
+            }
+            
+            .work-header {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .education-item .details {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .profile-image {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">Juan<span>Crisantes</span></div>
+            <div class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#strengths">Strengths</a></li>
+                    <li><a href="#resume">Resume</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact Me</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <img src="https://media.licdn.com/dms/image/v2/D4D03AQFedUbXOUYX1A/profile-displayphoto-crop_800_800/B4DZmdBrQOGQAI-/0/1759276087836?e=1766620800&v=beta&t=XwcgR9n-RK0Oh-wrm8Qlx0vI6R4pPd8jD2MvGu2T7Jk" 
+                 alt="Juan Crisantes" class="profile-image">
+            <h1>Juan Crisantes</h1>
+            <h2>Computer Science Student</h2>
+            <p>I am a dedicated Computer Science student at Point Loma Nazarene University with a strong academic record and practical experience in Java, C++, and database systems. Currently expanding my skills in software development while gaining customer service experience.</p>
+            <a href="#contact" class="btn">Get In Touch</a>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" style="background-color: #f5f7fa;">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Me</h2>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://media.licdn.com/dms/image/v2/D4D03AQFedUbXOUYX1A/profile-displayphoto-crop_800_800/B4DZmdBrQOGQAI-/0/1759276087836?e=1766620800&v=beta&t=XwcgR9n-RK0Oh-wrm8Qlx0vI6R4pPd8jD2MvGu2T7Jk" 
+                         alt="Juan Crisantes Professional Photo">
+                </div>
+                <div class="about-text">
+                    <h3>Computer Science Student & Aspiring Software Developer</h3>
+                    <p>I am currently pursuing a Bachelor of Science in Computer Science at Point Loma Nazarene University with a cumulative GPA of 3.68. My academic journey began at San Diego Miramar College where I earned two Associate degrees - one in Computer Science and another in Mathematics.</p>
+                    <p>My technical interests include software development, database systems, and web integration. I have developed intermediate proficiency in Java and C++ programming through my coursework and personal projects. I'm particularly interested in how technology can solve real-world problems and improve people's lives.</p>
+                    <p>Beyond academics, I have gained valuable experience in customer service and teamwork through my role as a Sales Advisor and my volunteer work at Feeding San Diego. These experiences have strengthened my communication skills and ability to work effectively in diverse teams.</p>
+                    <p>I selected the blue color scheme for this portfolio because it represents trust, stability, and professionalism - qualities I strive to embody in my work. The clean, modern design reflects my approach to problem-solving: organized, efficient, and focused on clarity.</p>
+                    
+                    <!-- MVVG Paper Link - CORRECTED -->
+                    <a href="MVVG_Juan_Crisantes.pdf" class="mvvp-link" target="_blank">
+                        <i class="fas fa-file-pdf"></i> Download My MVVG Paper (PDF)
+                    </a>
+                    
+                    <div class="about-icons">
+                        <div class="icon-item">
+                            <i class="fas fa-code"></i>
+                            <p>Software Development</p>
+                        </div>
+                        <div class="icon-item">
+                            <i class="fas fa-database"></i>
+                            <p>Database Systems</p>
+                        </div>
+                        <div class="icon-item">
+                            <i class="fas fa-globe"></i>
+                            <p>Web Integration</p>
+                        </div>
+                        <div class="icon-item">
+                            <i class="fas fa-users"></i>
+                            <p>Team Collaboration</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strengths Section -->
+    <section id="strengths">
+        <div class="container">
+            <div class="section-title">
+                <h2>Strengths</h2>
+            </div>
+            
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Top 5 Strengths</h3>
+                    <div class="skill-tags">
+                        <div class="skill-tag highlight">Harmony</div>
+                        <div class="skill-tag highlight">Consistency</div>
+                        <div class="skill-tag highlight">Context</div>
+                        <div class="skill-tag highlight">Relator</div>
+                        <div class="skill-tag highlight">Developer</div>
+                    </div>
+                    <p style="margin-top: 1rem; color: #555; line-height: 1.8;">
+                        <strong>Harmony:</strong> Seek consensus and avoid conflict<br>
+                        <strong>Consistency:</strong> Treat people equally and set clear rules<br>
+                        <strong>Context:</strong> Understand the present by researching the past<br>
+                        <strong>Relator:</strong> Enjoy close relationships with others<br>
+                        <strong>Developer:</strong> Recognize and cultivate potential in others
+                    </p>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Technical Skills</h3>
+                    <div class="skill-tags">
+                        <div class="skill-tag highlight">Intermediate Java</div>
+                        <div class="skill-tag highlight">Intermediate C++</div>
+                        <div class="skill-tag">Database Systems</div>
+                        <div class="skill-tag">Web Integration</div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <div class="skill-tags">
+                        <div class="skill-tag highlight">Spanish Fluency</div>
+                        <div class="skill-tag highlight">English Fluency</div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Professional Skills</h3>
+                    <div class="skill-tags">
+                        <div class="skill-tag">Sales Knowledge</div>
+                        <div class="skill-tag">Management Knowledge</div>
+                        <div class="skill-tag">Customer Service</div>
+                        <div class="skill-tag">Team Leadership</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="strengths-source">
+                <p>Source: <em>Strengths Finder 2.0</em> by Gallup</p>
+                <!-- Strengths Report Link - CORRECTED -->
+                <a href="crisantes-juan-SF_TOP_5.pdf" class="strengths-report-link" target="_blank">
+                    <i class="fas fa-download"></i> Download My Official Strengths Finder Report
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" style="background-color: #f5f7fa;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Resume</h2>
+            </div>
+            
+            <div class="resume-container">
+                <div class="resume-icon">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+                <h3>Professional Resume</h3>
+                <p>Download my complete resume to view my full education, work history, skills, and accomplishments.</p>
+                
+                <!-- RESUME PDF LINK - CORRECTED -->
+                <a href="Resume Draft_Juan_Crisantes.pdf" class="resume-download" download>
+                    <i class="fas fa-download"></i> Download Resume (PDF)
+                </a>
+                
+                <p style="margin-top: 1.5rem; color: var(--gray); font-size: 0.9rem;">
+                    <i class="fas fa-info-circle"></i> PDF format preserves formatting and is easy to print
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <div class="section-title">
+                <h2>Education</h2>
+            </div>
+            
+            <div class="education-item">
+                <h3>B.S. Computer Science</h3>
+                <div class="institution">Point Loma Nazarene University, San Diego, CA</div>
+                <div class="details">
+                    <div class="gpa">Cumulative GPA: 3.68</div>
+                </div>
+                <ul>
+                    <li>Coursework includes: Business Communication, Principles of Macroeconomics, Database Systems and Web Integration</li>
+                </ul>
+            </div>
+            
+            <div class="education-item">
+                <h3>A.S. Computer Science</h3>
+                <div class="institution">San Diego Miramar College, San Diego, CA</div>
+                <div class="details">
+                    <div class="gpa">Cumulative GPA: 3.57</div>
+                </div>
+                <ul>
+                    <li>Coursework includes: Intermediate Java Programming, Intermediate C++ Programming</li>
+                </ul>
+            </div>
+            
+            <div class="education-item">
+                <h3>A.S. Mathematics</h3>
+                <div class="institution">San Diego Miramar College, San Diego, CA</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work History Section -->
+    <section id="work" style="background-color: #f5f7fa;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Work History</h2>
+            </div>
+            
+            <div class="work-item">
+                <div class="work-header">
+                    <div class="work-title">Sales Advisor</div>
+                    <div class="work-date">Aug 2025 - Present</div>
+                </div>
+                <div class="work-company">Club Demonstration Services, Poway, San Diego, CA</div>
+                <ul>
+                    <li>Encourage customers to buy a product to meet a quota</li>
+                    <li>Multitasking, engaging with customers while maintaining cart</li>
+                </ul>
+            </div>
+            
+            <div class="work-item">
+                <div class="work-header">
+                    <div class="work-title">Food Bank Volunteer</div>
+                    <div class="work-date">May 2024 - Sept 2024</div>
+                </div>
+                <div class="work-company">Feeding San Diego, San Diego, CA</div>
+                <ul>
+                    <li>Helped and offered services to people in need</li>
+                    <li>Stayed informed about company services to inform people</li>
+                    <li>Occasionally acted as a supervisor for other volunteers</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Testimonials</h2>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Professor" class="testimonial-img">
+                        <div class="testimonial-info">
+                            <h4>Dr. Robert Chen</h4>
+                            <p>Computer Science Professor</p>
+                            <p>Point Loma Nazarene University</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-quote">
+                        "Juan demonstrates exceptional problem-solving abilities in my Database Systems class. His consistent performance and attention to detail set him apart from his peers. He would be a valuable asset to any development team."
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Supervisor" class="testimonial-img">
+                        <div class="testimonial-info">
+                            <h4>Maria Rodriguez</h4>
+                            <p>Volunteer Coordinator</p>
+                            <p>Feeding San Diego</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-quote">
+                        "During his time as a volunteer, Juan showed remarkable leadership and reliability. He naturally stepped into supervisory roles and helped train new volunteers. His consistency and teamwork significantly improved our operations."
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Advisor" class="testimonial-img">
+                        <div class="testimonial-info">
+                            <h4>James Wilson</h4>
+                            <p>Academic Advisor</p>
+                            <p>San Diego Miramar College</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-quote">
+                        "I advised Juan throughout his associate degree studies. His dedication to academic excellence and balanced approach to teamwork were impressive. He consistently sought challenges and demonstrated strong analytical thinking."
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Me</h2>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>5345 Toscana Way, San Diego, CA 92122</div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>(858) 370-4259</div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>Jcrisant0024@pointloma.edu</div>
+                    </div>
+                </div>
+                
+                <a href="mailto:Jcrisant0024@pointloma.edu" class="btn">Send Email</a>
+                
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/juan-crisantes-847008388/" class="social-link" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Juan Crisantes. All rights reserved.</p>
+            <p>Computer Science Portfolio</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            
+            // Change icon
+            const icon = mobileMenuBtn.querySelector('i');
+            if (navMenu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        // Close mobile menu when clicking a link
+        const navLinks = document.querySelectorAll('nav ul li a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
